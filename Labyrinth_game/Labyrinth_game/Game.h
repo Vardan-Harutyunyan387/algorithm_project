@@ -12,6 +12,7 @@ private:
 	Labyrinth& labyrinth;
 
 	void print_frame(std::vector<std::string>& mod_labyrinth);
+	bool move_player(int dir, Player& player);
 	
 };
 

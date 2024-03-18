@@ -132,6 +132,7 @@
     <ClCompile Include="Labyrinth.cpp" />
     <ClCompile Include="Labyrinth_game.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />

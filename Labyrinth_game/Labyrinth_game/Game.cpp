@@ -17,7 +17,7 @@ void Game::start_game()
         do {
             std::cin >> input;
             input = std::toupper(input);
-            if (player_1.move_player(input))
+            if (move_player(input, player_1))
             {
                 break;
             }
@@ -36,5 +36,41 @@ void Game::print_frame(std::vector<std::string>& mod_labyrinth)
     for (const auto& i : mod_labyrinth)
     {
         std::cout << i << std::endl;
+    }
+}
+
+bool Game::move_player(int dir, Player& player)
+{
+    switch (dir) {
+    case 'D':
+        if (labyrinth.is_valid_move(player.player_loc.x, player.player_loc.y + 1))
+        {
+            player.player_loc.y += 1;
+            return true;
+        }
+        return false;
+    case 'W':
+        if (labyrinth.is_valid_move(player.player_loc.x - 1, player.player_loc.y))
+        {
+            player.player_loc.x -= 1;
+            return true;
+        }
+        return false;
+    case 'A':
+        if (labyrinth.is_valid_move(player.player_loc.x, player.player_loc.y - 1))
+        {
+            player.player_loc.y -= 1;
+            return true;
+        }
+        return false;
+    case 'S':
+        if (labyrinth.is_valid_move(player.player_loc.x + 1, player.player_loc.y))
+        {
+            player.player_loc.x += 1;
+            return true;
+        }
+        return false;
+    default:
+        return false;
     }
 }

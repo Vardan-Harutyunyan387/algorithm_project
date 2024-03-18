@@ -1,7 +1,4 @@
 ﻿  Game.cpp
-  HumanPlayer.cpp
-  Labyrinth.cpp
-C:\Users\Vrdo\Desktop\alg_project\Labyrinth_game\Labyrinth_game\Labyrinth.cpp(52,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Labyrinth_game.cpp
   Generating Code...
   Labyrinth_game.vcxproj -> C:\Users\Vrdo\Desktop\alg_project\Labyrinth_game\x64\Debug\Labyrinth_game.exe
