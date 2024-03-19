@@ -22,6 +22,8 @@ public:
 	bool add_fire(int x, int y);
 	void fire_expand();
 	const std::vector<std::string>& get_labyrinth() const;
+	bool is_finish(Point p);
+	bool is_fire(Point p);
 
 };
 
