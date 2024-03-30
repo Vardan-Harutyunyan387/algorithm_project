@@ -3,12 +3,37 @@
 #include <cctype>
 Game::Game(Labyrinth& _labyrinth, HumanPlayer _player_1):labyrinth(_labyrinth), player_1(_player_1)
 {
+    random_move = false;
 }
 
-void Game::start_game()
+void Game::difficulty_input() {
+    std::cout << "Please choose the difficluty Number:\n"
+        << "1. Rookie \n" 
+        << "2. Easy\n" 
+        << "3. Medium\n"
+        << "4. Hard";
+    std::cin >> difficulty;
+    while (difficulty > 4 || difficulty < 0) {
+        std::cout << "Wrong numbre. Please choose difficluty number again from 1 to 4\n";
+        std::cin >> difficulty;
+    }
+}
+
+void Game::difficulty_mod() {
+    difficulty_input();
+    if (difficulty == 1 || difficulty == 2) {
+        random_move = true;
+        return;
+    }
+    labyrinth.difficulty_algorithm(difficulty);
+}
+
+void Game::play()
 {
+    difficulty_mod();
     char input;
 
+    labyrinth.fire_matrix_calc();
     while (true) {
         std::vector<std::string> mod_labyrinth(labyrinth.get_labyrinth()); // get labyrinth
 
@@ -24,7 +49,10 @@ void Game::start_game()
 
 
         } while (true);
-
+        if (random_move)
+            labyrinth.bot_rand_moving(random_move);
+        else
+            labyrinth.bot_moving();
         labyrinth.fire_expand();
     }
 
