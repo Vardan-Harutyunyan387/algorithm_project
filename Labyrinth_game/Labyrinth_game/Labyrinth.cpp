@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib> 
 #include "Labyrinth.h"
-
+#include "FireAi.h"
 
 Labyrinth::Labyrinth()
 {
@@ -11,18 +11,31 @@ Labyrinth::Labyrinth()
         "#.##.#.#.#",
         "#.##.#.#.#",
         "#....#.#.#",
-        "######.#.#",
-        "#........#",
-        "#.########",
-        "#........#",
+        "######O#.#",
+        "#....o...#",
+        "#@########",
+        "#......@.#",
         "##########"
     };
-    finish_1 = Point(8, 0);
-    finish_2 = Point(0, 1);
+    finish_1 = Point(-1, -1);
+    finish_2 = Point(-1, -1);
     rows = 10;
     cols = 10;
-    bot_position = Point(4, 6);
     fire_matrix = std::vector<std::vector<int>>(rows, std::vector<int> (cols, 1001));
+}
+
+Point Labyrinth::get_finish(int n) {
+    if (n == 1)
+        return finish_1;
+    if (n == 2)
+        return finish_2;
+    return Point(-1, -1);
+}
+int Labyrinth::get_rows() {
+    return rows;
+}
+int Labyrinth::get_cols() {
+    return cols;
 }
 
 bool Labyrinth::is_valid_move(int x, int y) const
@@ -38,28 +51,16 @@ bool Labyrinth::is_valid_move(Point p) const
         return false;  // Out of bounds
     return labyrinth[p.y][p.x] != WALL;  // Not a wall
 }
-
-bool Labyrinth::add_fire(int x, int y)
-{
-    if (!is_valid_move(x, y))
-    {
-        return false;
+void Labyrinth::set_finish(int n, Point pos) {
+    if (n == 1) {
+        finish_1 = pos;
     }
-    labyrinth[y][x] = FIRE;
-    fire_loc.push(Point(x, y));
-    return true;
-    
-}
-
-void Labyrinth::change_bot_position(Point pos) {
-    if (!is_valid_move(pos)) {
-        return;
+    else if (n == 2) {
+        finish_2 = pos;
     }
-    labyrinth[bot_position.y][bot_position.x] = SPACE;
-    labyrinth[pos.y][pos.x] = BOT;
-    bot_position = pos;
-}
 
+}
+/*
 //This function add to the our fire queue a position if it exsist
 void Labyrinth::queue_pusher(std::queue<int>& value_queue, std::queue<Point>& path_queue, Point pos, int x, int y, int val) {
     if (is_valid_move(pos.x + x, pos.y + y)) {
@@ -90,25 +91,9 @@ void Labyrinth::queue_pusher_all_positions(std::queue<Point>& path_queue, Point 
     queue_pusher(path_queue, pos, 0, -1);// (x, y - 1)
     queue_pusher(path_queue, pos, 0, 1);// (x, y + 1)
 }
-
+*/
 //Calculates the shortest path of fire and put it in fire_matrix 
-void Labyrinth::fire_matrix_calc() {
-    std::queue<Point> fire_queue = fire_loc;
-    std::queue<int> fire_path_queue;
-    for (int i = 0; i < fire_queue.size(); ++i)
-        fire_path_queue.push(0);
-    while (!fire_queue.empty()) {
-        Point current = fire_queue.front();
-        int current_path = fire_path_queue.front();
-        if (is_valid_move(current) && fire_matrix[current.y][current.x] > current_path) {
-            fire_matrix[current.y][current.x] = current_path;
-            queue_pusher_all_positions(fire_path_queue, fire_queue, current, current_path);
-        }
-        fire_queue.pop();
-        fire_path_queue.pop();
-    }
-    
-}
+
 
 //Checks if the neigbour position is smaller than current
 bool Labyrinth::bot_shorter_path_checker(Point current, int x, int y, std::vector<std::vector<int>> shortest_path_matrix) {
@@ -140,25 +125,7 @@ bool Labyrinth::bot_shortest_path_algorithm(Point current,std::vector<std::vecto
 }
 
 
-
 /*
-
-Qnnarkel Vardani het
-
-*/
-
-
-void Labyrinth::queue_reverse(std::queue<Point>& q) {
-    int len = q.size();
-    std::vector<Point> v;
-    while (len--) {
-        v.push_back(q.front());
-        q.pop();
-    }
-    for (int i = v.size() - 1; i > -1; --i)
-        q.push(v[i]);
-}
-
 //Returns the shortest path for bot in vector using bfs(wave algorithm )
 void Labyrinth::bot_mod_main_algorithm(std::vector<std::vector<int>>& shortest_path_matrix) {
     std::queue<Point> path_queue;
@@ -274,67 +241,9 @@ void Labyrinth::bot_medium_mod_algorithm() {
         bot_path = shortest_path_2;
         return;
     }
-}
-
-//Moving fire if posible
-void Labyrinth::fire_expanding(Point pos, int x, int y) {
-    if (is_valid_move(pos.x + x, pos.y + y)) {
-        labyrinth[pos.y + y][pos.x + x] = FIRE;
-        fire_loc.push(Point(pos.x + x, pos.y + y));
-    }
-}
-
-void Labyrinth::difficulty_algorithm(int difficulty) {
-    fire_matrix_calc();
-    if (difficulty == 4) {
-        bot_hard_mod_algorithm();
-        return;
-    }
-    else if (difficulty == 3) {
-        
-    }
-}
+}*/
 
 
-// Fire expanding function
-void Labyrinth::fire_expand()
-{
-    int len = fire_loc.size();
-    Point p;
-    for (int i = 0; i < len; i++)
-    {
-        p = fire_loc.front();
-        fire_loc.pop();
-        fire_expanding(p, 1, 0);
-        fire_expanding(p, -1, 0);
-        fire_expanding(p, 0, 1);
-        fire_expanding(p, 0, -1);
-    }
-}
-
-void Labyrinth::bot_moving() {
-    if (bot_path.empty())
-        return;
-    change_bot_position(bot_path.front());
-    bot_path.pop();
-}
-
-
-//Doing random move 
-//Is used in easy and rookie difficulties
-void Labyrinth::bot_rand_moving(bool avoid_fire) {
-    srand((unsigned)time(NULL));
-    int x, y;
-    while (true) {
-        x = (rand() % 3) - 1;
-        y = (rand() % 3) - 1;
-        if (!is_valid_move(bot_position.x + x, bot_position.y + y) || (avoid_fire && labyrinth[bot_position.y + y][x + bot_position.x + x] == FIRE)) {
-            continue;
-        }
-        break;
-    }
-    change_bot_position(Point(bot_position.x + x, bot_position.y + y));
-}
 
 
 const std::vector<std::string>& Labyrinth::get_labyrinth() const

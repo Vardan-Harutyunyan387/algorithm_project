@@ -1,9 +1,12 @@
 #include "Game.h"
 #include <iostream>
 #include <cctype>
-Game::Game(Labyrinth& _labyrinth, HumanPlayer _player_1):labyrinth(_labyrinth), player_1(_player_1)
+
+Game::Game(Labyrinth& _labyrinth, HumanPlayer _player):labyrinth(_labyrinth), player(_player)
 {
-    random_move = false;
+}
+Game::Game(Labyrinth& _labyrinth) : labyrinth(_labyrinth)
+{
 }
 
 void Game::difficulty_input() {
@@ -14,53 +17,172 @@ void Game::difficulty_input() {
         << "4. Hard";
     std::cin >> difficulty;
     while (difficulty > 4 || difficulty < 0) {
-        std::cout << "Wrong numbre. Please choose difficluty number again from 1 to 4\n";
+        std::cout << "Wrong number. Please choose difficluty number again from 1 to 4\n";
         std::cin >> difficulty;
     }
 }
 
-void Game::difficulty_mod() {
-    difficulty_input();
-    if (difficulty == 1 || difficulty == 2) {
-        random_move = true;
-        return;
+
+// finds finish 1 and finish 2, searching in borders 
+void Game::find_exites() {
+    for (int i = 0; i < labyrinth.get_cols(); ++i) {
+        if (labyrinth.is_valid_move(i, 0) && !labyrinth.is_valid_move(labyrinth.get_finish(1))) {
+            labyrinth.set_finish(1, Point(i, 0));
+        }
+        else if (labyrinth.is_valid_move(i, 0) && !labyrinth.is_valid_move(labyrinth.get_finish(2))) {
+            labyrinth.set_finish(2, Point(i, 0));
+        }
     }
-    labyrinth.difficulty_algorithm(difficulty);
+
+    for (int i = 0; i < labyrinth.get_rows(); ++i) {
+        if (labyrinth.is_valid_move(0, i) && !labyrinth.is_valid_move(labyrinth.get_finish(1))) {
+            labyrinth.set_finish(1, Point(0, i));
+        }
+        else if (labyrinth.is_valid_move(0, i) && !labyrinth.is_valid_move(labyrinth.get_finish(2))) {
+            labyrinth.set_finish(2, Point(0, i));
+        }
+    }
+
+    for (int i = 0; i < labyrinth.get_cols(); ++i) {
+        if (labyrinth.is_valid_move(i, labyrinth.get_rows() - 1) && !labyrinth.is_valid_move(labyrinth.get_finish(1))) {
+            labyrinth.set_finish(1, Point(i, labyrinth.get_rows() - 1));
+        }
+        else if (labyrinth.is_valid_move(i, labyrinth.get_rows() - 1) && !labyrinth.is_valid_move(labyrinth.get_finish(2))) {
+            labyrinth.set_finish(2, Point(i, labyrinth.get_rows() - 1));
+        }
+    }
+
+    for (int i = 0; i < labyrinth.get_rows(); ++i) {
+        if (labyrinth.is_valid_move(labyrinth.get_cols() - 1, i) && !labyrinth.is_valid_move(labyrinth.get_finish(1))) {
+            labyrinth.set_finish(1, Point(labyrinth.get_cols() - 1, i));
+        }
+        else if (labyrinth.is_valid_move(labyrinth.get_cols() - 1, i) && !labyrinth.is_valid_move(labyrinth.get_finish(2))) {
+            labyrinth.set_finish(2, Point(labyrinth.get_cols() - 1, i));
+        }
+    }
 }
+
+void Game::initialize() {
+    Point bot, human;
+    find_exites();
+    for (int i = 0; i < labyrinth.get_rows(); ++i) {
+        for (int j = 0; j < labyrinth.get_cols(); ++j) {
+            if (labyrinth.labyrinth[i][j] == BOT) {
+                bot = Point(j, i);
+            }
+            else if (labyrinth.labyrinth[i][j] == PLAYER) {
+                human = Point(j, i);
+            }
+            else if (labyrinth.labyrinth[i][j] == FIRE) {
+                fire_loc.push(FireAi(j, i, FIRE));
+            }
+        }
+    }
+    difficulty_input();
+    player = HumanPlayer(human, PLAYER);
+    if (difficulty == 1) {
+        EasyBot = EasyBotPlayer(bot, BOT);
+    }
+    else if (difficulty == 2) {
+        RookieBot = RookieBotPlayer(bot, BOT);
+    }
+    else if (difficulty == 3) {
+    
+    }
+    else if (difficulty == 4) {
+        HardBot = HardBotPlayer(bot, BOT);
+        fire_matrix_calc();
+        HardBot.start(labyrinth);
+    }
+}
+
+void Game::fire_matrix_calc() {
+    std::queue<FireAi> fire_queue = fire_loc;
+    while (!fire_queue.empty())
+    {
+        fire_queue.front().fire_matrix_calc_algorithm(labyrinth);
+        fire_queue.pop();
+    }
+}
+
+//Moving fire if it is posible
+void Game::fire_expanding(Point pos, int x, int y) {
+    if (labyrinth.is_valid_move(pos.x + x, pos.y + y) && labyrinth.labyrinth[pos.y + y][pos.x + x] != FIRE) {
+        labyrinth.labyrinth[pos.y + y][pos.x + x] = FIRE;
+        fire_loc.push(FireAi(pos.x + x, pos.y + y, FIRE));
+    }
+}
+
+bool Game::add_fire(int x, int y)
+{
+    if (!labyrinth.is_valid_move(x, y))
+    {
+        return false;
+    }
+    labyrinth.labyrinth[y][x] = FIRE;
+    fire_loc.push(FireAi(x, y, FIRE));
+    return true;
+
+}
+
+
+// Fire expanding function
+void Game::fire_expand()
+{
+    int len = fire_loc.size();
+    Point p;
+    for (int i = 0; i < len; i++)
+    {
+        p = fire_loc.front().position;
+        fire_loc.pop();
+        fire_expanding(p, 1, 0);
+        fire_expanding(p, -1, 0);
+        fire_expanding(p, 0, 1);
+        fire_expanding(p, 0, -1);
+    }
+}
+
 
 void Game::play()
 {
-    difficulty_mod();
+    initialize();
     char input;
 
-    labyrinth.fire_matrix_calc();
     while (true) {
         std::vector<std::string> mod_labyrinth(labyrinth.get_labyrinth()); // get labyrinth
 
-        this->print_frame(mod_labyrinth); // print current labyrinth with player_1
+        this->print_frame(mod_labyrinth); // print current labyrinth with player
 
         do {
             std::cin >> input;
             input = std::toupper(input);
-            if (move_player(input, player_1))
+            if (move_player(input, player))
             {
                 break;
             }
 
 
         } while (true);
-        if (random_move)
-            labyrinth.bot_rand_moving(random_move);
-        else
-            labyrinth.bot_moving();
-        labyrinth.fire_expand();
+        if (difficulty == 1) {
+            EasyBot.move(labyrinth);
+        }
+        else if (difficulty == 2) {
+            RookieBot.move(labyrinth);
+        }
+        else if (difficulty == 3) {
+        
+        }
+        else  {
+            HardBot.move(labyrinth);
+        }
+        fire_expand();
     }
 
 }
 
 void Game::print_frame(std::vector<std::string>& mod_labyrinth)
 {
-    mod_labyrinth[player_1.player_loc.x][player_1.player_loc.y] = player_1.sym;
+    mod_labyrinth[player.position.x][player.position.y] = player.sym;
     for (const auto& i : mod_labyrinth)
     {
         std::cout << i << std::endl;
@@ -71,30 +193,30 @@ bool Game::move_player(int dir, Player& player)
 {
     switch (dir) {
     case 'D':
-        if (labyrinth.is_valid_move(player.player_loc.x, player.player_loc.y + 1))
+        if (labyrinth.is_valid_move(player.position.x, player.position.y + 1))
         {
-            player.player_loc.y += 1;
+            player.position.y += 1;
             return true;
         }
         return false;
     case 'W':
-        if (labyrinth.is_valid_move(player.player_loc.x - 1, player.player_loc.y))
+        if (labyrinth.is_valid_move(player.position.x - 1, player.position.y))
         {
-            player.player_loc.x -= 1;
+            player.position.x -= 1;
             return true;
         }
         return false;
     case 'A':
-        if (labyrinth.is_valid_move(player.player_loc.x, player.player_loc.y - 1))
+        if (labyrinth.is_valid_move(player.position.x, player.position.y - 1))
         {
-            player.player_loc.y -= 1;
+            player.position.y -= 1;
             return true;
         }
         return false;
     case 'S':
-        if (labyrinth.is_valid_move(player.player_loc.x + 1, player.player_loc.y))
+        if (labyrinth.is_valid_move(player.position.x + 1, player.position.y))
         {
-            player.player_loc.x += 1;
+            player.position.x += 1;
             return true;
         }
         return false;

@@ -5,6 +5,8 @@
 class HumanPlayer: public Player
 {
 public:
+	HumanPlayer();
+	HumanPlayer(Point pos, char sym);
 	HumanPlayer(int x, int y, char sym);
 };
 

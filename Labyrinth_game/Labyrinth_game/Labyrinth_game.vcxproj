@@ -127,19 +127,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BotAlgorithms.cpp" />
+    <ClCompile Include="EasyBotPlayer.cpp" />
+    <ClCompile Include="FireAi.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="HardBotPlayer.cpp" />
     <ClCompile Include="HumanPlayer.cpp" />
     <ClCompile Include="Labyrinth.cpp" />
     <ClCompile Include="Labyrinth_game.cpp" />
+    <ClCompile Include="MediumBotPlayer.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RookieBotPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BotAlgorithms.h" />
+    <ClInclude Include="EasyBotPlayer.h" />
+    <ClInclude Include="FireAi.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="HardBotPlayer.h" />
     <ClInclude Include="HumanPlayer.h" />
     <ClInclude Include="Labyrinth.h" />
+    <ClInclude Include="MediumBotPlayer.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="RookieBotPlayer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
