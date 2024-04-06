@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <iostream>
 Player::Player() {}
 Player::Player(int x, int y, char sym) :sym(sym)
 {
@@ -14,4 +15,9 @@ bool Player::change_position(Point pos, Labyrinth& labyrinth) {
     labyrinth.labyrinth[pos.y][pos.x] = sym;
     position = pos;
     return true;
+}
+
+void Player::move(Labyrinth &labyrinth)
+{
+    std::cout << "do nothing" << std::endl;
 }

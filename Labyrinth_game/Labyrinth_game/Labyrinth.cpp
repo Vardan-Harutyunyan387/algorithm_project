@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib> 
+#include <fstream>
 #include "Labyrinth.h"
 #include "FireAi.h"
 
@@ -8,10 +9,10 @@ Labyrinth::Labyrinth()
 	labyrinth = {
         "########.#",
         "..##...#.#",
-        "#.##.#.#.#",
+        "#.##O#.#.#",
         "#.##.#.#.#",
         "#....#.#.#",
-        "######O#.#",
+        "######.#.#",
         "#....o...#",
         "#@########",
         "#......@.#",
@@ -22,6 +23,28 @@ Labyrinth::Labyrinth()
     rows = 10;
     cols = 10;
     fire_matrix = std::vector<std::vector<int>>(rows, std::vector<int> (cols, 1001));
+}
+
+Labyrinth::Labyrinth(const std::string& filename)
+{
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Error: Unable to open file " << filename << std::endl;
+        return;
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        labyrinth.push_back(line);
+    }
+    file.close();
+
+    finish_1 = Point(-1, -1);
+    finish_2 = Point(-1, -1);
+    rows = 20;
+    cols = 20;
+    fire_matrix = std::vector<std::vector<int>>(rows, std::vector<int>(cols, 1001));
+
 }
 
 Point Labyrinth::get_finish(int n) {
@@ -96,33 +119,33 @@ void Labyrinth::queue_pusher_all_positions(std::queue<Point>& path_queue, Point 
 
 
 //Checks if the neigbour position is smaller than current
-bool Labyrinth::bot_shorter_path_checker(Point current, int x, int y, std::vector<std::vector<int>> shortest_path_matrix) {
-    return (is_valid_move(current.x + x, current.y + y) && shortest_path_matrix[current.y + y][current.x + x] < shortest_path_matrix[current.y][current.x]);
-}
+//bool Labyrinth::bot_shorter_path_checker(Point current, int x, int y, std::vector<std::vector<int>> shortest_path_matrix) {
+//    return (is_valid_move(current.x + x, current.y + y) && shortest_path_matrix[current.y + y][current.x + x] < shortest_path_matrix[current.y][current.x]);
+//}
 
 //This function finds shortest path by moving from our position to it's smaller neigbour
 //In main algorithm we give to our shortest_path_matrix the values of path and this algorithm is coming back to our start position from finish position
-bool Labyrinth::bot_shortest_path_algorithm(Point current,std::vector<std::vector<int>> shortest_path_matrix, std::queue<Point>& shortest_path) {
-    if (!is_valid_move(current) || shortest_path_matrix[current.y][current.x] == 1001)
-        return false;
-    if (shortest_path_matrix[current.y][current.x] == 0)
-        return true;
-    shortest_path.push(current);
-    if (bot_shorter_path_checker(current, 1 , 0, shortest_path_matrix)) {
-        current.x++;
-    }
-    else if (bot_shorter_path_checker(current, -1, 0, shortest_path_matrix)) {
-        current.x--;
-    } 
-    else if (bot_shorter_path_checker(current, 0, 1, shortest_path_matrix)) {
-        current.y++;
-    }
-    else if (bot_shorter_path_checker(current, 0, -1, shortest_path_matrix)) {
-        current.y--;
-    }
-    return bot_shortest_path_algorithm(current, shortest_path_matrix, shortest_path);
-
-}
+//bool Labyrinth::bot_shortest_path_algorithm(Point current,std::vector<std::vector<int>> shortest_path_matrix, std::queue<Point>& shortest_path) {
+//    if (!is_valid_move(current) || shortest_path_matrix[current.y][current.x] == 1001)
+//        return false;
+//    if (shortest_path_matrix[current.y][current.x] == 0)
+//        return true;
+//    shortest_path.push(current);
+//    if (bot_shorter_path_checker(current, 1 , 0, shortest_path_matrix)) {
+//        current.x++;
+//    }
+//    else if (bot_shorter_path_checker(current, -1, 0, shortest_path_matrix)) {
+//        current.x--;
+//    } 
+//    else if (bot_shorter_path_checker(current, 0, 1, shortest_path_matrix)) {
+//        current.y++;
+//    }
+//    else if (bot_shorter_path_checker(current, 0, -1, shortest_path_matrix)) {
+//        current.y--;
+//    }
+//    return bot_shortest_path_algorithm(current, shortest_path_matrix, shortest_path);
+//
+//}
 
 
 /*
@@ -249,4 +272,18 @@ void Labyrinth::bot_medium_mod_algorithm() {
 const std::vector<std::string>& Labyrinth::get_labyrinth() const
 {
     return labyrinth;
+}
+
+bool Labyrinth::is_finish(Point p)
+{
+    if (p == finish_1 || p == finish_2)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Labyrinth::is_fire(Point p)
+{
+    return labyrinth[p.y][p.x] == FIRE;
 }

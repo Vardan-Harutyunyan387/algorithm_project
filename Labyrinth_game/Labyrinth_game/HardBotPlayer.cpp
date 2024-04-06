@@ -3,7 +3,10 @@
 
 HardBotPlayer::HardBotPlayer() {}
 HardBotPlayer::HardBotPlayer(int x, int y, char sym) : Player(x, y, sym) {}
-HardBotPlayer::HardBotPlayer(Point pos, char sym) : Player(pos, sym) {}
+HardBotPlayer::HardBotPlayer(Point pos, char sym, Labyrinth& labyrinth) : Player(pos, sym)
+{
+    this->start(labyrinth);
+}
 
 
 void HardBotPlayer::bot_hard_mod_algorithm(Labyrinth& labyrinth) {

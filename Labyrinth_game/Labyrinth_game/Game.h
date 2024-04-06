@@ -1,6 +1,6 @@
 #pragma once
 #include "Labyrinth.h"
-#include "Bot.h"
+//#include "Bot.h"
 #include "HumanPlayer.h"
 #include "EasyBotPlayer.h"
 #include "RookieBotPlayer.h"
@@ -19,10 +19,13 @@ public:
 	bool add_fire(int x, int y);
 private:
 	HumanPlayer player;
-	void find_exites();
 	Labyrinth labyrinth;
+	Player* bot_player;
+	bool have_winner = 0;
+	std::string endgame_message;
+
+	void find_exites();
 	void initialize();
-	void difficulty_mod();
 	void difficulty_input();
 	int difficulty;
 	void fire_expanding(Point pos, int x, int y);
@@ -32,8 +35,9 @@ private:
 	EasyBotPlayer EasyBot;
 	RookieBotPlayer RookieBot;
 	HardBotPlayer HardBot;
-	void print_frame(std::vector<std::string>& mod_labyrinth);
-	bool move_player(int dir, Player& player);
+	void print_frame(const std::vector<std::string>& mod_labyrinth) const;
+	bool check_winner();
+	Point move_to_dir(char dir, Point loc);
 	
 };
 

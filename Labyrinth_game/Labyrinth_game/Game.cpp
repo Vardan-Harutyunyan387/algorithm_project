@@ -82,17 +82,22 @@ void Game::initialize() {
     player = HumanPlayer(human, PLAYER);
     if (difficulty == 1) {
         EasyBot = EasyBotPlayer(bot, BOT);
+        bot_player = &EasyBot;
+        
     }
     else if (difficulty == 2) {
         RookieBot = RookieBotPlayer(bot, BOT);
+        bot_player = &RookieBot;
+        
     }
     else if (difficulty == 3) {
     
     }
     else if (difficulty == 4) {
-        HardBot = HardBotPlayer(bot, BOT);
+        HardBot = HardBotPlayer(bot, BOT, labyrinth);
+        bot_player = &HardBot;
         fire_matrix_calc();
-        HardBot.start(labyrinth);
+        //HardBot.start(labyrinth);
     }
 }
 
@@ -149,78 +154,119 @@ void Game::play()
     char input;
 
     while (true) {
-        std::vector<std::string> mod_labyrinth(labyrinth.get_labyrinth()); // get labyrinth
+        //std::vector<std::string> mod_labyrinth(labyrinth.get_labyrinth()); // get labyrinth
 
-        this->print_frame(mod_labyrinth); // print current labyrinth with player
+        this->print_frame(labyrinth.get_labyrinth()); // print current labyrinth with player
+
+        if (check_winner())
+        {
+            break;
+        }
+        if (labyrinth.is_fire(bot_player->position))
+        {
+            std::cout << "BOT STEPPED IN FIRE , PLAYER WON" << std::endl;
+            break;
+        }
+        if (have_winner)
+        {
+            std::cout << endgame_message << std::endl;
+        }
+
 
         do {
             std::cin >> input;
             input = std::toupper(input);
-            if (move_player(input, player))
+            if (labyrinth.is_fire(move_to_dir(input, player.position)))
+            {
+                endgame_message = "PLAYER STEPPED IN FIRE , BOT WON";
+                have_winner = true;
+            }
+            if (player.move_player(input, labyrinth))
             {
                 break;
             }
 
 
         } while (true);
-        if (difficulty == 1) {
-            EasyBot.move(labyrinth);
-        }
-        else if (difficulty == 2) {
-            RookieBot.move(labyrinth);
-        }
-        else if (difficulty == 3) {
-        
-        }
-        else  {
-            HardBot.move(labyrinth);
-        }
+
+
+
+        bot_player->move(labyrinth);
         fire_expand();
     }
 
 }
 
-void Game::print_frame(std::vector<std::string>& mod_labyrinth)
+void Game::print_frame(const std::vector<std::string>& mod_labyrinth) const
 {
-    mod_labyrinth[player.position.x][player.position.y] = player.sym;
+    //mod_labyrinth[player.position.x][player.position.y] = player.sym;
     for (const auto& i : mod_labyrinth)
     {
         std::cout << i << std::endl;
     }
 }
 
-bool Game::move_player(int dir, Player& player)
+bool Game::check_winner()
+{
+    if (labyrinth.is_finish(player.position))
+    {
+        std::cout << "PLAYER WON" << std::endl;
+        return true;
+    }
+    if (labyrinth.is_finish(bot_player->position))
+    {
+        std::cout << "BOT WON" << std::endl;
+        return true;
+    }
+    return false;
+}
+
+Point Game::move_to_dir(char dir, Point loc)
 {
     switch (dir) {
     case 'D':
-        if (labyrinth.is_valid_move(player.position.x, player.position.y + 1))
-        {
-            player.position.y += 1;
-            return true;
-        }
-        return false;
+        return Point(loc.x + 1, loc.y);
     case 'W':
-        if (labyrinth.is_valid_move(player.position.x - 1, player.position.y))
-        {
-            player.position.x -= 1;
-            return true;
-        }
-        return false;
+        return Point(loc.x, loc.y - 1);
     case 'A':
-        if (labyrinth.is_valid_move(player.position.x, player.position.y - 1))
-        {
-            player.position.y -= 1;
-            return true;
-        }
-        return false;
+        return Point(loc.x - 1, loc.y);
     case 'S':
-        if (labyrinth.is_valid_move(player.position.x + 1, player.position.y))
-        {
-            player.position.x += 1;
-            return true;
-        }
-        return false;
-    default:
-        return false;
+        return Point(loc.x, loc.y + 1);
     }
 }
+
+//bool Game::move_player(int dir, Player& player)
+//{
+//    switch (dir) {
+//    case 'D':
+//        if (labyrinth.is_valid_move(player.position.x, player.position.y + 1))
+//        {
+//            player.position.y += 1;
+//            return true;
+//        }
+//        return false;
+//    case 'W':
+//        if (labyrinth.is_valid_move(player.position.x - 1, player.position.y))
+//        {
+//            player.position.x -= 1;
+//            return true;
+//        }
+//        return false;
+//    case 'A':
+//        if (labyrinth.is_valid_move(player.position.x, player.position.y - 1))
+//        {
+//            player.position.y -= 1;
+//            return true;
+//        }
+//        return false;
+//    case 'S':
+//        if (labyrinth.is_valid_move(player.position.x + 1, player.position.y))
+//        {
+//            player.position.x += 1;
+//            return true;
+//        }
+//        return false;
+//    default:
+//        return false;
+//    }
+//}

@@ -11,7 +11,7 @@ int main()
 		LEFT = 2,
 		DOWN = 3
 	};
-    Labyrinth lab_1;
+    Labyrinth lab_1("labyrinth_1.txt");
 	//lab_1.change_bot_position({ 4, 6 });
 	//lab_1.fire_matrix_calc();
     //HumanPlayer player_1(5, 6,'p');
