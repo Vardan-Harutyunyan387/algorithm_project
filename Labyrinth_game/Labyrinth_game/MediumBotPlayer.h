@@ -10,6 +10,6 @@ public:
 	void move(Labyrinth& labyrinth);
 	MediumBotPlayer(int x, int y, char sym);
 	MediumBotPlayer();
-	MediumBotPlayer(Point pos, char sym);
+	MediumBotPlayer(Point pos, char sym, Labyrinth& labyrinth);
 	void start(Labyrinth& labyrinth);
 };

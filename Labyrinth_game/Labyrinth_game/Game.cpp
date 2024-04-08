@@ -91,7 +91,9 @@ void Game::initialize() {
         
     }
     else if (difficulty == 3) {
-    
+        MediumBot = MediumBotPlayer(bot, BOT, labyrinth);
+        bot_player = &MediumBot;
+        fire_matrix_calc();
     }
     else if (difficulty == 4) {
         HardBot = HardBotPlayer(bot, BOT, labyrinth);

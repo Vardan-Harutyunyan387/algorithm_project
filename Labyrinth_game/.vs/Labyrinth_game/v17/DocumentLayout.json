@@ -1,45 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\",
+  "WorkspaceRootPath": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Labyrinth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Labyrinth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\MediumBotPlayer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\MediumBotPlayer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\MediumBotPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\MediumBotPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Labyrinth_game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Labyrinth_game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\HardBotPlayer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\HardBotPlayer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Labyrinth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Labyrinth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\HumanPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Labyrinth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Labyrinth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Labyrinth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Labyrinth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Labyrinth_game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Labyrinth_game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\HumanPlayer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B683F68D-1DD6-4BCE-AEF2-9982C256EA80}|Labyrinth_game\\Labyrinth_game.vcxproj|solutionrelative:Labyrinth_game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -50,41 +62,143 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Point.h",
-              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Point.h",
-              "RelativeDocumentMoniker": "Labyrinth_game\\Point.h",
-              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Point.h",
-              "RelativeToolTip": "Labyrinth_game\\Point.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-19T05:26:16.761Z",
+              "DocumentIndex": 3,
+              "Title": "HardBotPlayer.cpp",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\HardBotPlayer.cpp",
+              "RelativeDocumentMoniker": "Labyrinth_game\\HardBotPlayer.cpp",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\HardBotPlayer.cpp",
+              "RelativeToolTip": "Labyrinth_game\\HardBotPlayer.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-08T10:11:10.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "MediumBotPlayer.h",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\MediumBotPlayer.h",
+              "RelativeDocumentMoniker": "Labyrinth_game\\MediumBotPlayer.h",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\MediumBotPlayer.h",
+              "RelativeToolTip": "Labyrinth_game\\MediumBotPlayer.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-08T10:08:08.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MediumBotPlayer.cpp",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\MediumBotPlayer.cpp",
+              "RelativeDocumentMoniker": "Labyrinth_game\\MediumBotPlayer.cpp",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\MediumBotPlayer.cpp",
+              "RelativeToolTip": "Labyrinth_game\\MediumBotPlayer.cpp",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAFYAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-08T09:37:57.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Game.h",
-              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Game.h",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Game.h",
               "RelativeDocumentMoniker": "Labyrinth_game\\Game.h",
-              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Game.h",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Game.h",
               "RelativeToolTip": "Labyrinth_game\\Game.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-03-18T20:44:04.547Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Labyrinth.cpp",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Labyrinth.cpp",
+              "RelativeDocumentMoniker": "Labyrinth_game\\Labyrinth.cpp",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Labyrinth.cpp",
+              "RelativeToolTip": "Labyrinth_game\\Labyrinth.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-18T20:44:05.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Labyrinth.h",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Labyrinth.h",
+              "RelativeDocumentMoniker": "Labyrinth_game\\Labyrinth.h",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Labyrinth.h",
+              "RelativeToolTip": "Labyrinth_game\\Labyrinth.h",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-18T20:44:05.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Game.cpp",
+              "RelativeDocumentMoniker": "Labyrinth_game\\Game.cpp",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Game.cpp",
+              "RelativeToolTip": "Labyrinth_game\\Game.cpp",
+              "ViewState": "AQIAALMAAAAAAAAAAAAMwLQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-18T20:44:04.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Player.h",
+              "RelativeDocumentMoniker": "Labyrinth_game\\Player.h",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Player.h",
+              "RelativeToolTip": "Labyrinth_game\\Player.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-18T20:44:05.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HumanPlayer.h",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.h",
+              "RelativeDocumentMoniker": "Labyrinth_game\\HumanPlayer.h",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.h",
+              "RelativeToolTip": "Labyrinth_game\\HumanPlayer.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-18T20:44:05.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "Labyrinth_game.cpp",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Labyrinth_game.cpp",
+              "RelativeDocumentMoniker": "Labyrinth_game\\Labyrinth_game.cpp",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Labyrinth_game.cpp",
+              "RelativeToolTip": "Labyrinth_game\\Labyrinth_game.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-18T20:44:05.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "HumanPlayer.cpp",
-              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.cpp",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.cpp",
               "RelativeDocumentMoniker": "Labyrinth_game\\HumanPlayer.cpp",
-              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.cpp",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.cpp",
               "RelativeToolTip": "Labyrinth_game\\HumanPlayer.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -92,88 +206,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Labyrinth.cpp",
-              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Labyrinth.cpp",
-              "RelativeDocumentMoniker": "Labyrinth_game\\Labyrinth.cpp",
-              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Labyrinth.cpp",
-              "RelativeToolTip": "Labyrinth_game\\Labyrinth.cpp",
-              "ViewState": "AQIAACsAAAAAAAAAAAAmwDEAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-18T20:44:05.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Labyrinth_game.cpp",
-              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Labyrinth_game.cpp",
-              "RelativeDocumentMoniker": "Labyrinth_game\\Labyrinth_game.cpp",
-              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Labyrinth_game.cpp",
-              "RelativeToolTip": "Labyrinth_game\\Labyrinth_game.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-18T20:44:05.22Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Player.h",
-              "RelativeDocumentMoniker": "Labyrinth_game\\Player.h",
-              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Player.h",
-              "RelativeToolTip": "Labyrinth_game\\Player.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "DocumentIndex": 10,
+              "Title": "Point.h",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Point.h",
+              "RelativeDocumentMoniker": "Labyrinth_game\\Point.h",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Point.h",
+              "RelativeToolTip": "Labyrinth_game\\Point.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-18T20:44:05.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-19T05:26:16.761Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Labyrinth.h",
-              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Labyrinth.h",
-              "RelativeDocumentMoniker": "Labyrinth_game\\Labyrinth.h",
-              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Labyrinth.h",
-              "RelativeToolTip": "Labyrinth_game\\Labyrinth.h",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-18T20:44:05.216Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Game.cpp",
-              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Game.cpp",
-              "RelativeDocumentMoniker": "Labyrinth_game\\Game.cpp",
-              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Game.cpp",
-              "RelativeToolTip": "Labyrinth_game\\Game.cpp",
-              "ViewState": "AQIAABoAAAAAAAAAAAAAACgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-18T20:44:04.864Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HumanPlayer.h",
-              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.h",
-              "RelativeDocumentMoniker": "Labyrinth_game\\HumanPlayer.h",
-              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\HumanPlayer.h",
-              "RelativeToolTip": "Labyrinth_game\\HumanPlayer.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-18T20:44:05.212Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Player.cpp",
+              "DocumentMoniker": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Player.cpp",
               "RelativeDocumentMoniker": "Labyrinth_game\\Player.cpp",
-              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project\\algorithm_project\\Labyrinth_game\\Labyrinth_game\\Player.cpp",
+              "ToolTip": "C:\\Users\\Vardan\\Desktop\\alg_project_git\\Labyrinth_game\\Labyrinth_game\\Player.cpp",
               "RelativeToolTip": "Labyrinth_game\\Player.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",

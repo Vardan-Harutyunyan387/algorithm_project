@@ -5,6 +5,7 @@
 #include "EasyBotPlayer.h"
 #include "RookieBotPlayer.h"
 #include "HardBotPlayer.h"
+#include "MediumBotPlayer.h"
 #include "FireAi.h"
 
 class Game
@@ -35,6 +36,7 @@ private:
 	EasyBotPlayer EasyBot;
 	RookieBotPlayer RookieBot;
 	HardBotPlayer HardBot;
+	MediumBotPlayer MediumBot;
 	void print_frame(const std::vector<std::string>& mod_labyrinth) const;
 	bool check_winner();
 	Point move_to_dir(char dir, Point loc);

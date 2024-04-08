@@ -1,2 +1,4 @@
-﻿  Labyrinth_game.cpp
-  Labyrinth_game.vcxproj -> C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\x64\Debug\Labyrinth_game.exe
+﻿  MediumBotPlayer.cpp
+C:\Users\Vardan\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPlayer.cpp(22,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Vardan\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPlayer.cpp(49,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Labyrinth_game.vcxproj -> C:\Users\Vardan\Desktop\alg_project_git\Labyrinth_game\x64\Debug\Labyrinth_game.exe
