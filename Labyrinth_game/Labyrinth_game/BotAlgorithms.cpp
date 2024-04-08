@@ -54,7 +54,7 @@ void BotAlgorithms::bot_mod_main_algorithm(std::vector<std::vector<int>>& shorte
     while (!path_queue.empty()) {
         while (!path_queue.empty()) {
             Point current = path_queue.front();
-            if (labyrinth.is_valid_move(current) && labyrinth.fire_matrix[current.y][current.x] > value && shortest_path_matrix[current.y][current.x] > value) {
+            if (labyrinth.is_valid_move(current) && (labyrinth.fire_matrix[current.y][current.x] > value || labyrinth.fire_matrix[current.y][current.x] == value && (current == labyrinth.get_finish(1) || current == labyrinth.get_finish(2))) && shortest_path_matrix[current.y][current.x] > value) {
                 shortest_path_matrix[current.y][current.x] = value;
                 queue_pusher_all_positions(new_path_queue, current, labyrinth);
             }
@@ -75,6 +75,7 @@ bool BotAlgorithms::bot_shortest_path_algorithm(Point current, std::vector<std::
     if (shortest_path_matrix[current.y][current.x] == 0)
         return true;
     shortest_path.push(current);
+    Point change_checker = current;
     if (bot_shorter_path_checker(current, 1, 0, shortest_path_matrix, labyrinth)) {
         current.x++;
     }
@@ -87,11 +88,13 @@ bool BotAlgorithms::bot_shortest_path_algorithm(Point current, std::vector<std::
     else if (bot_shorter_path_checker(current, 0, -1, shortest_path_matrix, labyrinth)) {
         current.y--;
     }
+    if (change_checker == current)
+        return false;
     return bot_shortest_path_algorithm(current, shortest_path_matrix, shortest_path, labyrinth);
 
 }
 
 
 bool BotAlgorithms::bot_shorter_path_checker(Point current, int x, int y, std::vector<std::vector<int>> shortest_path_matrix, Labyrinth& labyrinth) {
-    return (labyrinth.is_valid_move(current.x + x, current.y + y) && shortest_path_matrix[current.y + y][current.x + x] < shortest_path_matrix[current.y][current.x]);
+    return (labyrinth.is_valid_move(current.x + x, current.y + y) && shortest_path_matrix[current.y][current.x] - shortest_path_matrix[current.y + y][current.x + x] == 1);
 }

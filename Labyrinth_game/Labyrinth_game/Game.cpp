@@ -91,14 +91,14 @@ void Game::initialize() {
         
     }
     else if (difficulty == 3) {
+        fire_matrix_calc();
         MediumBot = MediumBotPlayer(bot, BOT, labyrinth);
         bot_player = &MediumBot;
-        fire_matrix_calc();
     }
     else if (difficulty == 4) {
+        fire_matrix_calc();
         HardBot = HardBotPlayer(bot, BOT, labyrinth);
         bot_player = &HardBot;
-        fire_matrix_calc();
         //HardBot.start(labyrinth);
     }
 }

@@ -1,4 +1,12 @@
 ﻿  MediumBotPlayer.cpp
-C:\Users\Vardan\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPlayer.cpp(22,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Vardan\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPlayer.cpp(49,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Labyrinth_game.vcxproj -> C:\Users\Vardan\Desktop\alg_project_git\Labyrinth_game\x64\Debug\Labyrinth_game.exe
+C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\Labyrinth_game\MediumBotPlayer.h(12,156): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\Labyrinth_game\MediumBotPlayer.h(14,142): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\Labyrinth_game\MediumBotPlayer.h(15,131): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\Labyrinth_game\MediumBotPlayer.h(16,138): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\Labyrinth_game\MediumBotPlayer.cpp(12,33): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\Labyrinth_game\MediumBotPlayer.cpp(37,154): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\Labyrinth_game\MediumBotPlayer.cpp(52,171): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\Labyrinth_game\MediumBotPlayer.cpp(66,147): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\Labyrinth_game\MediumBotPlayer.cpp(67,24): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\Labyrinth_game\MediumBotPlayer.cpp(92,167): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+  Labyrinth_game.vcxproj -> C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\x64\Debug\Labyrinth_game.exe
