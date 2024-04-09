@@ -210,7 +210,9 @@ void Game::play()
                     if (labyrinth.is_fire_next_turn(player.position))
                     {
                         std::cout << "PLAYER STEPPED IN FIRE , BOT WON" << std::endl;
+                        labyrinth.labyrinth[bot_player->position.y][bot_player->position.x] = BOT;
                         labyrinth.labyrinth[player.position.y][player.position.x] = DEAD;
+                        have_winner = true;
                     }
                     break;
                 }

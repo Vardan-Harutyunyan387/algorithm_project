@@ -4,5 +4,5 @@ C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPla
 C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPlayer.h(15,131): warning C4227: anachronism used: qualifiers on reference are ignored
 C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPlayer.h(16,138): warning C4227: anachronism used: qualifiers on reference are ignored
 C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\Game.cpp(170,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\Game.cpp(291): warning C4715: 'Game::move_to_dir': not all control paths return a value
+C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\Game.cpp(293): warning C4715: 'Game::move_to_dir': not all control paths return a value
   Labyrinth_game.vcxproj -> C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\x64\Debug\Labyrinth_game.exe
