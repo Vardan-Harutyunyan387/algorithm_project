@@ -26,37 +26,37 @@ void Game::difficulty_input() {
 // finds finish 1 and finish 2, searching in borders 
 void Game::find_exites() {
     for (int i = 0; i < labyrinth.get_cols(); ++i) {
-        if (labyrinth.is_valid_move(i, 0) && !labyrinth.is_valid_move(labyrinth.get_finish(1))) {
+        if (labyrinth.is_valid_move(i, 0) && !labyrinth.is_valid_move(labyrinth.get_finish(1)) && labyrinth.labyrinth[0][i] == labyrinth.SPACE) {
             labyrinth.set_finish(1, Point(i, 0));
         }
-        else if (labyrinth.is_valid_move(i, 0) && !labyrinth.is_valid_move(labyrinth.get_finish(2))) {
+        else if (labyrinth.is_valid_move(i, 0) && !labyrinth.is_valid_move(labyrinth.get_finish(2)) && labyrinth.labyrinth[0][i] == labyrinth.SPACE) {
             labyrinth.set_finish(2, Point(i, 0));
         }
     }
 
     for (int i = 0; i < labyrinth.get_rows(); ++i) {
-        if (labyrinth.is_valid_move(0, i) && !labyrinth.is_valid_move(labyrinth.get_finish(1))) {
+        if (labyrinth.is_valid_move(0, i) && !labyrinth.is_valid_move(labyrinth.get_finish(1)) && labyrinth.labyrinth[i][0] == labyrinth.SPACE) {
             labyrinth.set_finish(1, Point(0, i));
         }
-        else if (labyrinth.is_valid_move(0, i) && !labyrinth.is_valid_move(labyrinth.get_finish(2))) {
+        else if (labyrinth.is_valid_move(0, i) && !labyrinth.is_valid_move(labyrinth.get_finish(2)) && labyrinth.labyrinth[i][0] == labyrinth.SPACE) {
             labyrinth.set_finish(2, Point(0, i));
         }
     }
 
     for (int i = 0; i < labyrinth.get_cols(); ++i) {
-        if (labyrinth.is_valid_move(i, labyrinth.get_rows() - 1) && !labyrinth.is_valid_move(labyrinth.get_finish(1))) {
+        if (labyrinth.is_valid_move(i, labyrinth.get_rows() - 1) && !labyrinth.is_valid_move(labyrinth.get_finish(1)) && labyrinth.labyrinth[labyrinth.get_rows() - 1][i] == labyrinth.SPACE) {
             labyrinth.set_finish(1, Point(i, labyrinth.get_rows() - 1));
         }
-        else if (labyrinth.is_valid_move(i, labyrinth.get_rows() - 1) && !labyrinth.is_valid_move(labyrinth.get_finish(2))) {
+        else if (labyrinth.is_valid_move(i, labyrinth.get_rows() - 1) && !labyrinth.is_valid_move(labyrinth.get_finish(2)) && labyrinth.labyrinth[labyrinth.get_rows() - 1][i] == labyrinth.SPACE) {
             labyrinth.set_finish(2, Point(i, labyrinth.get_rows() - 1));
         }
     }
 
     for (int i = 0; i < labyrinth.get_rows(); ++i) {
-        if (labyrinth.is_valid_move(labyrinth.get_cols() - 1, i) && !labyrinth.is_valid_move(labyrinth.get_finish(1))) {
+        if (labyrinth.is_valid_move(labyrinth.get_cols() - 1, i) && !labyrinth.is_valid_move(labyrinth.get_finish(1)) && labyrinth.labyrinth[i][labyrinth.get_cols() - 1] == labyrinth.SPACE) {
             labyrinth.set_finish(1, Point(labyrinth.get_cols() - 1, i));
         }
-        else if (labyrinth.is_valid_move(labyrinth.get_cols() - 1, i) && !labyrinth.is_valid_move(labyrinth.get_finish(2))) {
+        else if (labyrinth.is_valid_move(labyrinth.get_cols() - 1, i) && !labyrinth.is_valid_move(labyrinth.get_finish(2)) && labyrinth.labyrinth[i][labyrinth.get_cols() - 1] == labyrinth.SPACE) {
             labyrinth.set_finish(2, Point(labyrinth.get_cols() - 1, i));
         }
     }
