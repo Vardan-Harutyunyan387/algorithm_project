@@ -14,7 +14,7 @@ void Game::difficulty_input() {
         << "1. Rookie \n" 
         << "2. Easy\n" 
         << "3. Medium\n"
-        << "4. Hard";
+        << "4. Hard\n";
     std::cin >> difficulty;
     while (difficulty > 4 || difficulty < 0) {
         std::cout << "Wrong number. Please choose difficluty number again from 1 to 4\n";
@@ -114,7 +114,7 @@ void Game::fire_matrix_calc() {
 
 //Moving fire if it is posible
 void Game::fire_expanding(Point pos, int x, int y) {
-    if (labyrinth.is_valid_move(pos.x + x, pos.y + y) && labyrinth.labyrinth[pos.y + y][pos.x + x] != FIRE) {
+    if (labyrinth.is_valid_move(pos.x + x, pos.y + y) && labyrinth.labyrinth[pos.y + y][pos.x + x] != FIRE && labyrinth.labyrinth[pos.y + y][pos.x + x] != DEAD && labyrinth.labyrinth[pos.y + y][pos.x + x] != PLAYER && labyrinth.labyrinth[pos.y + y][pos.x + x] != BOT) {
         labyrinth.labyrinth[pos.y + y][pos.x + x] = FIRE;
         fire_loc.push(FireAi(pos.x + x, pos.y + y, FIRE));
     }
@@ -159,32 +159,38 @@ void Game::play()
         //std::vector<std::string> mod_labyrinth(labyrinth.get_labyrinth()); // get labyrinth
 
         this->print_frame(labyrinth.get_labyrinth()); // print current labyrinth with player
+        if (have_winner)
+        {
+            std::cout << endgame_message << std::endl;
+            break;
+        }
 
         if (check_winner())
         {
             break;
         }
-        if (labyrinth.is_fire(bot_player->position))
+        if (labyrinth.is_fire_next_turn(bot_player->position))
         {
             std::cout << "BOT STEPPED IN FIRE , PLAYER WON" << std::endl;
+            labyrinth.labyrinth[bot_player->position.y][bot_player->position.x] = DEAD;
+            //this->print_frame(labyrinth.get_labyrinth());
             break;
         }
-        if (have_winner)
-        {
-            std::cout << endgame_message << std::endl;
-        }
+
 
 
         do {
             std::cin >> input;
             input = std::toupper(input);
-            if (labyrinth.is_fire(move_to_dir(input, player.position)))
-            {
-                endgame_message = "PLAYER STEPPED IN FIRE , BOT WON";
-                have_winner = true;
-            }
             if (player.move_player(input, labyrinth))
             {
+                if (labyrinth.is_fire_next_turn(player.position))
+                {
+                    endgame_message = "PLAYER STEPPED IN FIRE , BOT WON";
+                    labyrinth.labyrinth[player.position.y][player.position.x] = DEAD;
+                    //this->print_frame(labyrinth.get_labyrinth());
+                    have_winner = true;
+                }
                 break;
             }
 
@@ -194,6 +200,11 @@ void Game::play()
 
 
         bot_player->move(labyrinth);
+
+        if (bot_player->position == player.position)
+        {
+            labyrinth.labyrinth[player.position.y][player.position.x] = PLAYER_AND_BOT;
+        }
         fire_expand();
     }
 
@@ -236,39 +247,3 @@ Point Game::move_to_dir(char dir, Point loc)
         return Point(loc.x, loc.y + 1);
     }
 }
-
-//bool Game::move_player(int dir, Player& player)
-//{
-//    switch (dir) {
-//    case 'D':
-//        if (labyrinth.is_valid_move(player.position.x, player.position.y + 1))
-//        {
-//            player.position.y += 1;
-//            return true;
-//        }
-//        return false;
-//    case 'W':
-//        if (labyrinth.is_valid_move(player.position.x - 1, player.position.y))
-//        {
-//            player.position.x -= 1;
-//            return true;
-//        }
-//        return false;
-//    case 'A':
-//        if (labyrinth.is_valid_move(player.position.x, player.position.y - 1))
-//        {
-//            player.position.y -= 1;
-//            return true;
-//        }
-//        return false;
-//    case 'S':
-//        if (labyrinth.is_valid_move(player.position.x + 1, player.position.y))
-//        {
-//            player.position.x += 1;
-//            return true;
-//        }
-//        return false;
-//    default:
-//        return false;
-//    }
-//}

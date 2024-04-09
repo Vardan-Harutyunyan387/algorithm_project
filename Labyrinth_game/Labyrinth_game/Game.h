@@ -14,9 +14,11 @@ public:
 	Game(Labyrinth& _labyrinth, HumanPlayer _player);
 	Game(Labyrinth& _labyrinth);
 	void play();
-	char BOT = 'o';
-	char PLAYER = 'O';
-	char FIRE = '@';
+	char BOT = 'B';
+	char PLAYER = 'P';
+	char FIRE = 'F';
+	char DEAD = 'X';
+	char PLAYER_AND_BOT = 'U';
 	bool add_fire(int x, int y);
 private:
 	HumanPlayer player;
