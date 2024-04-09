@@ -1,5 +1,5 @@
 #include "HardBotPlayer.h"
-
+#include<iostream>
 
 HardBotPlayer::HardBotPlayer() {}
 HardBotPlayer::HardBotPlayer(int x, int y, char sym) : Player(x, y, sym) {}
@@ -18,9 +18,8 @@ void HardBotPlayer::bot_hard_mod_algorithm(Labyrinth& labyrinth) {
     bool second_path = bot_shortest_path_algorithm(labyrinth.get_finish(2), shortest_path_matrix, shortest_path_2, labyrinth);
     queue_reverse(shortest_path_2);
     queue_reverse(shortest_path_1);
-
     //check wich path is shortest for our 2 finishes
-    if (!second_path || shortest_path_2.size() > shortest_path_1.size()) {
+    if (!second_path || (first_path && shortest_path_2.size() > shortest_path_1.size())) {
         path = shortest_path_1;
         return;
     }

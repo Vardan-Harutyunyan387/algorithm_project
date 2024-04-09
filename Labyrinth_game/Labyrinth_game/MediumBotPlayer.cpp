@@ -129,7 +129,7 @@ void MediumBotPlayer::bot_medium_mod_algorithm(Labyrinth& labyrinth) {
 
 
     // if 1 path doesn't exist make 2 path longer or 1 path is longer than 2 path
-    if (!first_path || second_path && shortest_path_2.size() < shortest_path_1.size()) {
+    if (!first_path || (second_path && shortest_path_2.size() < shortest_path_1.size())) {
         std::cout << shortest_path_2.size();
         bot_medium_algorithm_calc(shortest_path_2, shortest_path_matrix, labyrinth);
         path = shortest_path_2;
