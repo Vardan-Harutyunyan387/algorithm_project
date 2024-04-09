@@ -1,6 +1,7 @@
 #include "Game.h"
 #include <iostream>
 #include <cctype>
+#include <windows.h>
 
 Game::Game(Labyrinth& _labyrinth, HumanPlayer _player):labyrinth(_labyrinth), player(_player)
 {
@@ -22,6 +23,36 @@ void Game::difficulty_input() {
     }
 }
 
+
+char Game::getKeyPress()
+{
+    HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE);
+    DWORD fdwMode = 0;
+    INPUT_RECORD irInBuf[128];
+    DWORD cNumRead = 0;
+
+    // Get the current input mode
+    GetConsoleMode(hStdin, &fdwMode);
+
+    // Disable line input and echo input
+    SetConsoleMode(hStdin, fdwMode & ~(ENABLE_LINE_INPUT | ENABLE_ECHO_INPUT));
+
+    while (true) {
+        if (!ReadConsoleInput(hStdin, irInBuf, 128, &cNumRead)) {
+            std::cerr << "Error reading input." << std::endl;
+            return 0;
+        }
+
+        // Process the input events
+        for (DWORD i = 0; i < cNumRead; ++i) {
+            if (irInBuf[i].EventType == KEY_EVENT && irInBuf[i].Event.KeyEvent.bKeyDown) {
+                // Process the key events
+                char key = irInBuf[i].Event.KeyEvent.uChar.AsciiChar;
+                return key;
+            }
+        }
+    }
+}
 
 // finds finish 1 and finish 2, searching in borders 
 void Game::find_exites() {
@@ -153,59 +184,70 @@ void Game::fire_expand()
 void Game::play()
 {
     initialize();
+    bool have_winner = 0;
     char input;
+    this->print_frame(labyrinth.get_labyrinth()); // print current labyrinth with player
 
-    while (true) {
+    while (true && !have_winner) {
         //std::vector<std::string> mod_labyrinth(labyrinth.get_labyrinth()); // get labyrinth
 
-        this->print_frame(labyrinth.get_labyrinth()); // print current labyrinth with player
-        if (have_winner)
-        {
-            std::cout << endgame_message << std::endl;
-            break;
-        }
+        //if (have_winner)
+        //{
+        //    std::cout << endgame_message << std::endl;
+        //    break;
+        //}
 
-        if (check_winner())
-        {
-            break;
-        }
-        if (labyrinth.is_fire_next_turn(bot_player->position))
-        {
-            std::cout << "BOT STEPPED IN FIRE , PLAYER WON" << std::endl;
-            labyrinth.labyrinth[bot_player->position.y][bot_player->position.x] = DEAD;
-            //this->print_frame(labyrinth.get_labyrinth());
-            break;
-        }
 
 
 
         do {
-            std::cin >> input;
-            input = std::toupper(input);
+            //std::cin >> input;
+            input = std::toupper(getKeyPress());
             if (player.move_player(input, labyrinth))
             {
-                if (labyrinth.is_fire_next_turn(player.position))
+                if(!check_winner())
                 {
-                    endgame_message = "PLAYER STEPPED IN FIRE , BOT WON";
-                    labyrinth.labyrinth[player.position.y][player.position.x] = DEAD;
-                    //this->print_frame(labyrinth.get_labyrinth());
-                    have_winner = true;
+                    if (labyrinth.is_fire_next_turn(player.position))
+                    {
+                        std::cout << "PLAYER STEPPED IN FIRE , BOT WON" << std::endl;
+                        labyrinth.labyrinth[player.position.y][player.position.x] = DEAD;
+                    }
+                    break;
                 }
-                break;
+                else
+                {
+                    have_winner = true;
+                    labyrinth.labyrinth[bot_player->position.y][bot_player->position.x] = BOT;
+                    break;
+                }
             }
 
 
         } while (true);
-
-
-
-        bot_player->move(labyrinth);
+        
+    
+        if (!have_winner) {
+            bot_player->move(labyrinth);
+            if (!check_winner())
+            {
+                if (labyrinth.is_fire_next_turn(bot_player->position))
+                {
+                    std::cout << "BOT STEPPED IN FIRE , PLAYER WON" << std::endl;
+                    labyrinth.labyrinth[bot_player->position.y][bot_player->position.x] = DEAD;
+                    have_winner = true;
+                }
+                fire_expand();
+            }
+            else {
+                have_winner = true;
+            }
+        }
 
         if (bot_player->position == player.position)
         {
             labyrinth.labyrinth[player.position.y][player.position.x] = PLAYER_AND_BOT;
         }
-        fire_expand();
+        this->print_frame(labyrinth.get_labyrinth()); // print current labyrinth with player
     }
 
 }

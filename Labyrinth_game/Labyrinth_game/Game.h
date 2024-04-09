@@ -24,9 +24,8 @@ private:
 	HumanPlayer player;
 	Labyrinth labyrinth;
 	Player* bot_player;
-	bool have_winner = 0;
-	std::string endgame_message;
 
+	char getKeyPress();
 	void find_exites();
 	void initialize();
 	void difficulty_input();

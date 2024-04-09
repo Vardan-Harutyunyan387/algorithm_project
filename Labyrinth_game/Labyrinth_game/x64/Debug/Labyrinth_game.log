@@ -1,2 +1,8 @@
-﻿  HardBotPlayer.cpp
-  Labyrinth_game.vcxproj -> C:\Users\Hayk\source\repos\algorithm_project\Labyrinth_game\x64\Debug\Labyrinth_game.exe
+﻿  Game.cpp
+C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPlayer.h(12,156): warning C4227: anachronism used: qualifiers on reference are ignored
+C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPlayer.h(14,142): warning C4227: anachronism used: qualifiers on reference are ignored
+C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPlayer.h(15,131): warning C4227: anachronism used: qualifiers on reference are ignored
+C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\MediumBotPlayer.h(16,138): warning C4227: anachronism used: qualifiers on reference are ignored
+C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\Game.cpp(170,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\Labyrinth_game\Game.cpp(291): warning C4715: 'Game::move_to_dir': not all control paths return a value
+  Labyrinth_game.vcxproj -> C:\Users\Vrdo\Desktop\alg_project_git\Labyrinth_game\x64\Debug\Labyrinth_game.exe
