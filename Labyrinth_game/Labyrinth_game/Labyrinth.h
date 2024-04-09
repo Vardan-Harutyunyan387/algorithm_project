@@ -28,7 +28,7 @@ public:
 
 	char WALL = '#';
 	char SPACE = '.';
-	char FIRE = '@';
+	char FIRE = 'F';
 
 	std::vector<std::string> labyrinth;
 
@@ -40,6 +40,7 @@ public:
 
 	bool is_finish(Point p);
 	bool is_fire(Point p);
+	bool is_fire_next_turn(Point p);
 
 };
 
