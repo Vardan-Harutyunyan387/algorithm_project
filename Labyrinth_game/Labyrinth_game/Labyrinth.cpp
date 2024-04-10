@@ -106,7 +106,6 @@ bool Labyrinth::is_fire(Point p)
 
 bool Labyrinth::is_fire_next_turn(Point p)
 {
-    return labyrinth[p.y + 1][p.x + 1] == FIRE || labyrinth[p.y + 1][p.x] == FIRE || labyrinth[p.y + 1][p.x - 1] == FIRE ||
-        labyrinth[p.y][p.x + 1] == FIRE || labyrinth[p.y][p.x - 1] == FIRE || labyrinth[p.y - 1][p.x + 1] == FIRE || labyrinth[p.y - 1][p.x] == FIRE ||
-        labyrinth[p.y - 1][p.x - 1] == FIRE;
+    return  labyrinth[p.y + 1][p.x] == FIRE  ||
+        labyrinth[p.y][p.x + 1] == FIRE || labyrinth[p.y][p.x - 1] == FIRE || labyrinth[p.y - 1][p.x] == FIRE;
 }

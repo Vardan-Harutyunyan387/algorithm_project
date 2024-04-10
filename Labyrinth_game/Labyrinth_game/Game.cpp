@@ -118,14 +118,13 @@ void Game::initialize() {
     difficulty_input();
     player = HumanPlayer(human, PLAYER);
     if (difficulty == 1) {
-        EasyBot = EasyBotPlayer(bot, BOT);
-        bot_player = &EasyBot;
-        
-    }
-    else if (difficulty == 2) {
         RookieBot = RookieBotPlayer(bot, BOT);
         bot_player = &RookieBot;
         
+    } else if (difficulty == 2) {
+        EasyBot = EasyBotPlayer(bot, BOT);
+        bot_player = &EasyBot;
+
     }
     else if (difficulty == 3) {
         fire_matrix_calc();
