@@ -2,6 +2,11 @@
 #include <iostream>
 #include <cctype>
 #include <windows.h>
+#include <string>
+#include <filesystem>
+#include <sys/stat.h>
+
+
 
 Game::Game(Labyrinth& _labyrinth, HumanPlayer _player):labyrinth(_labyrinth), player(_player)
 {
@@ -22,6 +27,7 @@ void Game::difficulty_input() {
         std::cin >> difficulty;
     }
 }
+
 
 
 char Game::getKeyPress()
@@ -189,16 +195,6 @@ void Game::play()
     this->print_frame(labyrinth.get_labyrinth()); // print current labyrinth with player
 
     while (true && !have_winner) {
-        //std::vector<std::string> mod_labyrinth(labyrinth.get_labyrinth()); // get labyrinth
-
-        //if (have_winner)
-        //{
-        //    std::cout << endgame_message << std::endl;
-        //    break;
-        //}
-
-
-
 
         do {
             //std::cin >> input;
@@ -238,7 +234,7 @@ void Game::play()
                     labyrinth.labyrinth[bot_player->position.y][bot_player->position.x] = DEAD;
                     have_winner = true;
                 }
-                fire_expand();
+                //fire_expand();
             }
             else {
                 have_winner = true;
@@ -249,9 +245,10 @@ void Game::play()
         {
             labyrinth.labyrinth[player.position.y][player.position.x] = PLAYER_AND_BOT;
         }
+        fire_expand();
         this->print_frame(labyrinth.get_labyrinth()); // print current labyrinth with player
     }
-
+    resetConsoleMode();
 }
 
 void Game::print_frame(const std::vector<std::string>& mod_labyrinth) const
@@ -291,3 +288,25 @@ Point Game::move_to_dir(char dir, Point loc)
         return Point(loc.x, loc.y + 1);
     }
 }
+
+void Game::resetConsoleMode()
+{
+    HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE);
+    DWORD fdwMode = 0;
+
+    // Get the current input mode
+    if (!GetConsoleMode(hStdin, &fdwMode)) {
+        std::cerr << "Error getting console mode." << std::endl;
+        return;
+    }
+
+    // Enable line input and echo input (restore default mode)
+    fdwMode |= (ENABLE_LINE_INPUT | ENABLE_ECHO_INPUT);
+
+    // Set the console mode
+    if (!SetConsoleMode(hStdin, fdwMode)) {
+        std::cerr << "Error setting console mode." << std::endl;
+        return;
+    }
+}
+

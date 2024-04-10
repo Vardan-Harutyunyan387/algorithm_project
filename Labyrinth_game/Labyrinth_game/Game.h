@@ -8,6 +8,7 @@
 #include "MediumBotPlayer.h"
 #include "FireAi.h"
 
+
 class Game
 {
 public:
@@ -25,6 +26,8 @@ private:
 	Labyrinth labyrinth;
 	Player* bot_player;
 
+	//std::vector<std::string> getDirectoryFiles(const fs::path& directory = fs::current_path(),
+	//	const std::vector<std::string> extensions = {});
 	char getKeyPress();
 	void find_exites();
 	void initialize();
@@ -41,6 +44,7 @@ private:
 	void print_frame(const std::vector<std::string>& mod_labyrinth) const;
 	bool check_winner();
 	Point move_to_dir(char dir, Point loc);
+	void resetConsoleMode();
 	
 };
 
